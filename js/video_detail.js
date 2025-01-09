@@ -9,10 +9,10 @@
  * Imports
  */
 
-import { client } from "../../js/api_configure.js";
-import { ripple } from "../../js/utils/ripple.js";
-import { menu } from "../../js/menu.js";
-import { favorite } from "../../js/favorite.js";
+import { client } from "./api_configure.js";
+import { ripple } from "./utils/ripple.js";
+import { menu } from "./menu.js";
+import { favorite } from "./favorite.js";
 
 
 /**

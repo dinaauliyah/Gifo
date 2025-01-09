@@ -9,11 +9,11 @@
  * Import
  */
 
-import { client } from "../../js/api_configure.js";
-import { gridInit, updateGrid } from "../../js/utils/masonry_grid.js";
-import { photoCard } from "../../js/photo_card.js";
-import { videoCard } from "../../js/video_card.js";
-import { urlDecode } from "../../js/utils/urlDecode.js";
+import { client } from "./api_configure.js";
+import { gridInit, updateGrid } from "./utils/masonry_grid.js";
+import { photoCard } from "./photo_card.js";
+import { videoCard } from "./video_card.js";
+import { urlDecode } from "./utils/urlDecode.js";
 
 
 /**

@@ -10,12 +10,12 @@
  * Import
  */
 
-import { client } from "../../js/api_configure.js";
-import { gridInit, updateGrid } from "../../js/utils/masonry_grid.js";
-import { photoCard } from "../../js/photo_card.js";
-import { updateUrl } from "../../js/utils/updateUrl.js";
-import { urlDecode } from "../../js/utils/urlDecode.js";
-import { filter } from "../../js/filter.js";
+import { client } from "./api_configure.js";
+import { gridInit, updateGrid } from "./utils/masonry_grid.js";
+import { videoCard } from "./video_card.js";
+import { updateUrl } from "./utils/updateUrl.js";
+import { urlDecode } from "./utils/urlDecode.js";
+import { filter } from "./filter.js";
 
 
 /**
@@ -36,26 +36,26 @@ const /** {NodeList} */ $filterWrappers = document.querySelectorAll("[data-filte
 $filterWrappers.forEach($filterWrapper => {
   filter($filterWrapper, window.filterObj, (newObj) => {
     window.filterObj = newObj;
-    updateUrl(newObj, "photos");
+    updateUrl(newObj, "videos");
   });
 });
 
 
 /**
- * Render curated or searched photos
- * If searched something then render searched photos
- * Otherwise render curated photos
+ * Render popular or searched videos
+ * If searched something then render searched videos
+ * Otherwise render popular videos
  */
 
-const /** {NodeElement} */ $photoGrid = document.querySelector("[data-photo-grid]");
+const /** {NodeElement} */ $videoGrid = document.querySelector("[data-video-grid]");
 const /** {NodeElement} */ $title = document.querySelector("[data-title]");
-const /** {Object} */ photoGrid = gridInit($photoGrid);
+const /** {Object} */ videoGrid = gridInit($videoGrid);
 const /** {Number} */ perPage = 30;
 let /** {Number} */ currentPage = 1;
 let /** {Number} */ totalPage = 0;
 const /** {String} */ searchUrl = window.location.search.slice(1);
 let /** {Object} */ searchObj = searchUrl && urlDecode(searchUrl);
-const /** {String} */ title = searchObj ? `${searchObj.query} photos` : "Curated photos"
+const /** {String} */ title = searchObj ? `${searchObj.query} videos` : "Popular videos"
 
 $title.textContent = title;
 document.title = title;
@@ -65,21 +65,21 @@ document.title = title;
  * @param {Number} currentPage Current page number
  */
 
-const renderPhotos = function (currentPage) {
+const renderVideos = function (currentPage) {
 
-  client.photos[searchObj ? "search" : "curated"]({ ...searchObj, per_page: perPage, page: currentPage }, data => {
+  client.videos[searchObj ? "search" : "popular"]({ ...searchObj, per_page: perPage, page: currentPage }, data => {
 
     totalPage = Math.ceil(data.total_results / perPage);
 
-    data.photos.forEach(photo => {
+    data.videos.forEach(video => {
 
-      const /** {NodeElement} */ $photoCard = photoCard(photo);
+      const /** {NodeElement} */ $videoCard = videoCard(video);
 
-      updateGrid($photoCard, photoGrid.columnsHeight, photoGrid.$columns);
+      updateGrid($videoCard, videoGrid.columnsHeight, videoGrid.$columns);
 
     });
 
-    // when photos loaded
+    // when videos loaded
     isLoaded = true;
 
     // when no more photo found, hide loader
@@ -89,11 +89,11 @@ const renderPhotos = function (currentPage) {
 
 }
 
-renderPhotos(currentPage);
+renderVideos(currentPage);
 
 
 /**
- * Load more photos
+ * Load more videos
  */
 
 const /** {NodeElement} */ $loader = document.querySelector("[data-loader]");
@@ -104,7 +104,7 @@ window.addEventListener("scroll", function () {
   if ($loader.getBoundingClientRect().top < (window.innerHeight * 2) && currentPage <= totalPage && isLoaded) {
 
     currentPage++;
-    renderPhotos(currentPage);
+    renderVideos(currentPage);
     isLoaded = false;
 
   }

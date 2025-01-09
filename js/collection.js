@@ -9,8 +9,8 @@
  * Import
  */
 
-import { client } from "../../js/api_configure.js";
-import { collectionCard } from "../../js/collection_card.js";
+import { client } from "./api_configure.js";
+import { collectionCard } from "./collection_card.js";
 
 
 /**

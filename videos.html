@@ -8,19 +8,19 @@
   <!-- 
     - primary meta tags
   -->
-  <title>Curated photos - PixelSnap</title>
-  <meta name="title" content="Curated photos - PixelSnap">
+  <title>Popular videos - PixelSnap</title>
+  <meta name="title" content="Popular videos - PixelSnap">
   <meta name="description" content="This is a stock photos app made by dinaauliyah">
 
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
   <!-- 
     - theme js link
   -->
-  <script src="../../js/theme.js"></script>
+  <script src="./js/theme.js"></script>
 
   <!-- 
     - google font link
@@ -38,14 +38,14 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 
   <!-- 
     - custom js link
   -->
-  <script src="../../js/global.js" type="module"></script>
-  <script src="../../js/search.js" type="module"></script>
-  <script src="./photos.js" type="module"></script>
+  <script src="./js/global.js" type="module"></script>
+  <script src="./js/search.js" type="module"></script>
+  <script src="./js/videos.js" type="module"></script>
 
 </head>
 
@@ -101,7 +101,7 @@
 
         <div class="btn-group" data-segment="search">
 
-          <button class="btn-segment selected" data-ripple data-segment-btn data-segment-value="photos">
+          <button class="btn-segment" data-ripple data-segment-btn data-segment-value="photos">
             <span class="material-symbols-outlined" aria-hidden="true">image</span>
 
             <span class="label-large text">Photos</span>
@@ -109,7 +109,7 @@
             <div class="state-layer"></div>
           </button>
 
-          <button class="btn-segment" data-ripple data-segment-btn data-segment-value="videos">
+          <button class="btn-segment selected" data-ripple data-segment-btn data-segment-value="videos">
             <span class="material-symbols-outlined" aria-hidden="true">videocam</span>
 
             <span class="label-large text">Videos</span>
@@ -181,7 +181,7 @@
 
       <li class="drawer-item">
 
-        <a href="./photos.html" class="drawer-link active" data-drawer-link>
+        <a href="./photos.html" class="drawer-link" data-drawer-link>
           <span class="material-symbols-outlined leading-icon" aria-hidden="true">image</span>
 
           <span class="label-large">Photos</span>
@@ -193,7 +193,7 @@
 
       <li class="drawer-item">
 
-        <a href="../videos/videos.html" class="drawer-link" data-drawer-link>
+        <a href="./videos.html" class="drawer-link active" data-drawer-link>
           <span class="material-symbols-outlined leading-icon" aria-hidden="true">videocam</span>
 
           <span class="label-large">Videos</span>
@@ -205,7 +205,7 @@
 
       <li class="drawer-item">
 
-        <a href="../collections/collection.html" class="drawer-link" data-drawer-link>
+        <a href="./collection.html" class="drawer-link" data-drawer-link>
           <span class="material-symbols-outlined leading-icon" aria-hidden="true">auto_awesome_mosaic</span>
 
           <span class="label-large">Collections</span>
@@ -217,7 +217,7 @@
 
       <li class="drawer-item">
 
-        <a href="../favorite/favorite.html" class="drawer-link" data-drawer-link>
+        <a href="./favorite.html" class="drawer-link" data-drawer-link>
           <span class="material-symbols-outlined leading-icon" aria-hidden="true">favorite</span>
 
           <span class="label-large">Favorite</span>
@@ -248,7 +248,7 @@
   <main class="main">
     <article class="container">
 
-      <h2 class="page-title title-large" data-title>Curated photos</h2>
+      <h2 class="page-title title-large" data-title>Popular videos</h2>
 
       <div class="filter-bar" data-filter-bar>
 
@@ -340,34 +340,9 @@
 
         </div>
 
-        <div class="menu-wrapper" data-filter="color">
-
-          <div class="filter-chip" data-filter-chip>
-            <button class="chip-content" data-filter-btn>
-
-              <input type="color" name="color" class="color-field" data-color-field>
-
-              <span class="material-symbols-outlined leading-icon" aria-hidden="true">check</span>
-
-              <span class="label-large text" data-filter-value="Color">Color</span>
-
-              <span class="material-symbols-outlined trailing-icon arrow-icon" aria-hidden="true">arrow_drop_down</span>
-
-              <div class="state-layer"></div>
-            </button>
-
-            <button class="close-icon" data-filter-clear>
-              <span class="material-symbols-outlined trailing-icon" aria-hidden="true">close</span>
-
-              <div class="state-layer"></div>
-            </button>
-          </div>
-
-        </div>
-
       </div>
 
-      <div class="media-grid" data-photo-grid></div>
+      <div class="media-grid" data-video-grid></div>
 
       <div class="load-more" data-loader role="progressbar"></div>
 

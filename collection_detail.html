@@ -8,19 +8,19 @@
   <!-- 
     - primary meta tags
   -->
-  <title>Favorites - PixelSnap</title>
-  <meta name="title" content="Favorites - PixelSnap">
+  <title>Collection detail - PixelSnap</title>
+  <meta name="title" content="Collection detail - PixelSnap">
   <meta name="description" content="This is a stock photos app made by dinaauliyah">
 
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
   <!-- 
     - theme js link
   -->
-  <script src="../../js/theme.js"></script>
+  <script src="./js/theme.js"></script>
 
   <!-- 
     - google font link
@@ -38,14 +38,14 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 
   <!-- 
     - custom js link
   -->
-  <script src="../../js/global.js" type="module"></script>
-  <script src="../../js/search.js" type="module"></script>
-  <script src="./favorite.js" type="module"></script>
+  <script src="./js/global.js" type="module"></script>
+  <script src="./js/search.js" type="module"></script>
+  <script src="./js/collection_detail.js" type="module"></script>
 
 </head>
 
@@ -181,7 +181,7 @@
 
       <li class="drawer-item">
 
-        <a href="../photos/photos.html" class="drawer-link" data-drawer-link>
+        <a href="./photos.html" class="drawer-link" data-drawer-link>
           <span class="material-symbols-outlined leading-icon" aria-hidden="true">image</span>
 
           <span class="label-large">Photos</span>
@@ -193,7 +193,7 @@
 
       <li class="drawer-item">
 
-        <a href="../videos/videos.html" class="drawer-link" data-drawer-link>
+        <a href="./videos.html" class="drawer-link" data-drawer-link>
           <span class="material-symbols-outlined leading-icon" aria-hidden="true">videocam</span>
 
           <span class="label-large">Videos</span>
@@ -205,7 +205,7 @@
 
       <li class="drawer-item">
 
-        <a href="../collections/collection.html" class="drawer-link" data-drawer-link>
+        <a href="./collection.html" class="drawer-link" data-drawer-link>
           <span class="material-symbols-outlined leading-icon" aria-hidden="true">auto_awesome_mosaic</span>
 
           <span class="label-large">Collections</span>
@@ -217,7 +217,7 @@
 
       <li class="drawer-item">
 
-        <a href="./favorite.html" class="drawer-link active" data-drawer-link>
+        <a href="./favorite.html" class="drawer-link" data-drawer-link>
           <span class="material-symbols-outlined leading-icon" aria-hidden="true">favorite</span>
 
           <span class="label-large">Favorite</span>
@@ -245,32 +245,14 @@
 
 
 
-  <main class="main favorite-page">
+  <main class="main">
     <article class="container">
 
-      <h2 class="page-title title-large" data-title>Favorites</h2>
+      <h2 class="page-title title-large" data-title>Collection detail</h2>
 
-      <div class="btn-group" data-segment="favorite">
+      <div class="media-grid" data-collection-grid></div>
 
-        <button class="btn-segment selected" data-ripple data-segment-btn data-segment-value="photos">
-          <span class="material-symbols-outlined" aria-hidden="true">image</span>
-
-          <span class="label-large text">Photos</span>
-
-          <div class="state-layer"></div>
-        </button>
-
-        <button class="btn-segment" data-ripple data-segment-btn data-segment-value="videos">
-          <span class="material-symbols-outlined" aria-hidden="true">videocam</span>
-
-          <span class="label-large text">Videos</span>
-
-          <div class="state-layer"></div>
-        </button>
-
-      </div>
-
-      <div class="media-grid" data-fav-grid></div>
+      <div class="load-more" data-loader role="progressbar"></div>
 
     </article>
   </main>

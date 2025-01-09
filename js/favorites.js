@@ -10,10 +10,10 @@
  * Imports
  */
 
-import { gridInit, updateGrid } from "../../js/utils/masonry_grid.js";
-import { segment } from "../../js/segment_btn.js";
-import { photoCard } from "../../js/photo_card.js";
-import { videoCard } from "../../js/video_card.js";
+import { gridInit, updateGrid } from "./utils/masonry_grid.js";
+import { segment } from "./segment_btn.js";
+import { photoCard } from "./photo_card.js";
+import { videoCard } from "./video_card.js";
 
 
 /**
