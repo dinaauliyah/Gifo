@@ -10,12 +10,12 @@
  * Import
  */
 
-import { client } from "./api_configure.js";
-import { gridInit, updateGrid } from "./utils/masonry_grid.js";
+import { client } from "./js/api_configure.js";
+import { gridInit, updateGrid } from "./js/utils/masonry_grid.js";
 import { photoCard } from "./photo_card.js";
-import { updateUrl } from "./utils/updateUrl.js";
-import { urlDecode } from "./utils/urlDecode.js";
-import { filter } from "./filter.js";
+import { updateUrl } from "./js/utils/updateUrl.js";
+import { urlDecode } from "./js/utils/urlDecode.js";
+import { filter } from "./js/filter.js";
 
 
 /**
