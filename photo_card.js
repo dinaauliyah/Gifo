@@ -9,8 +9,8 @@
  * Import
  */
 
-import { ripple } from "./utils/ripple.js";
-import { favorite } from "./favorite.js";
+import { ripple } from "./js/utils/ripple.js";
+import { favorite } from "./js/favorite.js";
 
 
 /**
