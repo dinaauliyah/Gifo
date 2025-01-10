@@ -54,7 +54,7 @@ export const photoCard = photo => {
 
     </div>
 
-    <a href="${root}/photo_detail.html?id=${id}" class="state-layer"></a>
+    <a href="photo_detail.html?id=${id}" class="state-layer"></a>
   `;
 
   const /** {NodeElement} */ $cardBanner = $card.querySelector("img");
