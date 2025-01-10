@@ -23,6 +23,6 @@ export const updateUrl = (filterObj, searchType) => {
     const /** {String} */ root = window.location.origin;
     const /** {String} */ searchQuery = urlEncode(filterObj);
 
-    window.location = `../../${searchType}.html?${searchQuery}`;
+    window.location = `/${searchType}.html?${searchQuery}`;
   }, 500);
 }

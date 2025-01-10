@@ -39,7 +39,7 @@ export const collectionCard = collection => {
       <p class="body-medium label">${media_count} media</p>
     </div>
 
-    <a href="../collection_detail.html?collectionId=${id}&title=${title}" class="state-layer"></a>
+    <a href="/collection_detail.html?collectionId=${id}&title=${title}" class="state-layer"></a>
   `;
 
   ripple($card);
